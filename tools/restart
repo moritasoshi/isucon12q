@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+# nginx,mysql のログを削除
+echo ":: CLEAR LOGS       ====>"
+sudo truncate -s 0 -c /var/log/nginx/access.log
+sudo truncate -s 0 -c /var/log/mysql/slow.log
+sudo truncate -s 0 -c /tmp/digest.txt
+
+# 各種サービスの再起動
+echo
+echo ":: RESTART SERVICES ====>"
+sudo systemctl daemon-reload
+#sudo systemctl restart isuports.service
+sudo systemctl restart mysql
+sudo systemctl restart nginx
+
+sleep 5
+echo ":: DONE!!! ====>"
