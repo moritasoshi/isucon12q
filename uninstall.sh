@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt uninstall tree \
+sudo apt --purge remove tree \
 	unzip \
 	percona-toolkit \
 

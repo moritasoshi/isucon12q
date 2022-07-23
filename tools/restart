@@ -12,7 +12,7 @@ sudo truncate -s 0 -c /tmp/digest.txt
 echo
 echo ":: RESTART SERVICES ====>"
 sudo systemctl daemon-reload
-#sudo systemctl restart isuports.service
+sudo systemctl restart isuports.service
 sudo systemctl restart mysql
 sudo systemctl restart nginx
 
