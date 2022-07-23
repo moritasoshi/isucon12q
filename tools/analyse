@@ -9,7 +9,7 @@ sudo cat /var/log/nginx/access.log | alp ltsv --sort sum -r -m "/api/player/comp
 # スロークエリを解析
 echo
 echo ":: SQL LOG       ====>"
-sudo mysqldumpslow -s t /var/log/mysql/slow.log | head -n 20
+sudo mysqldumpslow -s t /var/log/mysql/slow.log | head -n 50
 
 echo
 echo ":: QUERY DIGEST  ====>"
